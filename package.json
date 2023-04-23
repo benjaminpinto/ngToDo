@@ -6,7 +6,9 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "build-gh-pages": "ng build --base-href 'https://github.com/benjaminpinto/ngToDo'",
+    "deploy-gh-pages": "npx angular-cli-ghpages --dir=dist/ng-to-do"
   },
   "private": true,
   "dependencies": {
@@ -28,6 +30,7 @@
     "@angular/compiler-cli": "^15.2.0",
     "@schematics/angular": "^15.2.6",
     "@types/jasmine": "~4.3.0",
+    "angular-cli-ghpages": "^1.0.5",
     "jasmine-core": "~4.5.0",
     "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.1.0",
