@@ -3,7 +3,11 @@
     <li *ngFor="let item of itemList; let i = index">
       <input type="checkbox" [(ngModel)]="item.completed" />
       <a>#{{ item.id }}</a>
-      <input type="text" [(ngModel)]="item.title" />
+      <input
+        type="text"
+        [(ngModel)]="item.title"
+        [ngClass]="{ checked: item.completed }"
+      />
       <button (click)="deleteItem(item.id)">
         <img src="assets/icons/icon-trash.svg" alt="Remover" />
       </button>
