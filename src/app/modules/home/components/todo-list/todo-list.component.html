@@ -1,0 +1,19 @@
+<section [ngClass]="{ loading: !itemList.length }">
+  <ul *ngIf="itemList.length">
+    <li *ngFor="let item of itemList; let i = index">
+      <input type="checkbox" [(ngModel)]="item.completed" />
+      <a>#{{ item.id }}</a>
+      <input type="text" [(ngModel)]="item.title" />
+      <button (click)="deleteItem(item.id)">
+        <img src="assets/icons/icon-trash.svg" alt="Remover" />
+      </button>
+    </li>
+  </ul>
+</section>
+<app-todo-input-add-items
+  (emitItem)="addItem($event)"
+></app-todo-input-add-items>
+<app-todo-button-delete-all
+  *ngIf="itemList.length"
+  (click)="deleteAll()"
+></app-todo-button-delete-all>
